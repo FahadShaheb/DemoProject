@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/burger.dart';
+import 'package:flutter_application_1/screens/pizza.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -83,54 +84,65 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Container(
-                    height: 220,
-                    width: 250,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PizzaDetails(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 220,
+                      width: 250,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      elevation: 3,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(top: 5),
-                            child: Image.asset(
-                              "Image/pizza.jpg",
-                              fit: BoxFit.cover,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 3,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: Image.asset(
+                                "Image/pizza.jpg",
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.only(
-                                top: 10, left: 5, right: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  child: const Text(
-                                    "American Sausage Pizza",
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
+                            Container(
+                              padding: const EdgeInsets.only(
+                                  top: 10, left: 5, right: 5),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    child: const Text(
+                                      "American Sausage Pizza",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  child: Text(
-                                    "750 Tk",
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500,
+                                  Container(
+                                    child: Text(
+                                      "750 Tk",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
